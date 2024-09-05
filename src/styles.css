@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+/* @import url(./components//loadingBG.css); */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+li {
+    list-style-type: none;
+  }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-mdc-dialog-surface, .mdc-dialog__surface {
+  background-color: #1D232A !important;
+}
+
