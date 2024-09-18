@@ -1,1 +1,42 @@
-<p>HEllo</p>
+<div class="main">
+  <section class="aboutContent">
+    <div class="aboutText">
+      <h1>About Me</h1>
+      <p>Your descriptive text goes here. Tell your story or provide information in a clean, engaging format.</p>
+    </div>
+    <div class="aboutImageContainer">
+      <div class="aboutImage">
+      </div>
+    </div>
+  </section>
+  <div class="contentDivider">
+    <hr/>
+  </div>
+  <div class="workHistory">
+    <h1 class="header">Work History</h1>
+    <div class="workHistoryContainer">
+      <div *ngFor="let information of workInformation$ | async; let i = index;"> 
+        <div class="workHistoryCardContainer">
+          <div class="startYearEndYear">
+            <p>{{ information?.startYearAndEndYear }}</p>
+          </div>
+          <div class="roleDetails">
+            <div class="roleTitle card-title">
+              <p>{{ information?.workCardTitle }}</p>
+            </div>
+            <div class="roleDescription">
+              <p>{{ information?.workDescription }}</p>
+            </div>
+            <div class="technologyUsed">
+              <div *ngFor="let technology of technologyUsedMap[i]"> 
+                <div class="technologyBadgeContainer card-actions justify-end">
+                    <div class="technologyBadge badge badge-outline">{{ technology }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

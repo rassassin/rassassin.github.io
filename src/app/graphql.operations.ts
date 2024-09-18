@@ -1,15 +1,27 @@
 import { gql } from "apollo-angular";
 
-const GET_POSTS = gql`
+const GET_PROJECTS = gql`
 query GetPosts {
     projects {
-    description
-    title
-    updatedAt
-    url
-    imageId
-    longDescription
-  }
+      description
+      title
+      updatedAt
+      url
+      imageId
+      longDescription
+    }
 }`
 
-export { GET_POSTS };
+const GET_WORKINFORMATION = gql`
+query GetPosts {
+    workcards {
+      workCardTitle
+      startYearAndEndYear
+      workDescription
+      technologyUsed
+      organisationUrl
+    }
+}`
+
+export { GET_PROJECTS };
+export { GET_WORKINFORMATION };

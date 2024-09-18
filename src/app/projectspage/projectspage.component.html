@@ -1,12 +1,12 @@
 <div class="main">
-    <div class="projects-container">
+    <div class="projectContainer">
         <div *ngFor="let project of projects$ | async; let i = index;">
-            <div class="project-card">
+            <div class="projectCard">
                 <div class="card bg-base-100 w-50 shadow-xl"
                     [ngStyle]="{'animation-delay': this.randomDelaysForCards[i] + 's'}">
                     <a (click)="openDialog(project)">
                         <figure>
-                            <img src={{project?.imageId}} alt="Projects" class="image-wrapper" />
+                            <img src={{project?.imageId}} alt="Projects" class="imageWrapper" />
                         </figure>
                         <div class="card-body">
                             <h2 class="card-title">{{ project?.title }}</h2>

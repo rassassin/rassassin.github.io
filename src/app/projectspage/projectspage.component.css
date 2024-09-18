@@ -5,7 +5,7 @@
   background-color: rgb(24,25,25)
 }
 
-.projects-container {
+.projectContainer {
     display: grid;
     width: 100%;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); /* Allows wrapping to a new row if there are too many cards */
@@ -13,7 +13,7 @@
     margin: 18px;  
   }
 
-.project-card {
+.projectCard {
   box-shadow:0 0 15px 5px rgba(242, 82, 73, 0);  /*Add a glowing effect */
   transition: all 0.3s ease-in-out; /* Smooth transition */
   border-radius: 15px;
@@ -21,7 +21,7 @@
   cursor: pointer;
 }
 
-.project-card:hover {
+.projectCard:hover {
   box-shadow:0 0 20px 1px rgba(242, 82, 73, 0.7);  /*Add a glowing effect */
 }
 
@@ -72,7 +72,7 @@
       max-width: 500px; /* Adjust the max-width for smaller screens */
     }
   
-    .image-wrapper {
+    .imageWrapper {
       width: 600px;
       height: 300px; /* Adjust the height proportionally */
     }
@@ -85,7 +85,7 @@
       max-width: 100%; /* Full width for mobile */
     }
   
-    .image-wrapper {
+    .imageWrapper {
       width: 100%;
       height: auto; /* Let the height adjust automatically */
     }
@@ -95,14 +95,14 @@
       padding: 16px; /* Adjust padding for smaller screens */
     }
   
-    .projects-container {
+    .projectContainer {
       gap: 10px; /* Reduce gap for smaller screens */
     }
   }
   
   /* Extra small screens (very small mobile devices) */
   @media (max-width: 480px) {
-    .image-wrapper {
+    .imageWrapper {
       height: auto; /* Let the image resize based on its aspect ratio */
     }
   

@@ -1,7 +1,7 @@
-import { AfterViewInit, Component, OnInit} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { Apollo } from "apollo-angular";
-import { GET_POSTS } from '../graphql.operations' 
+import { GET_PROJECTS } from '../graphql.operations' 
 import { Observable, of } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { ModalComponent } from "../modal/modal.component";
@@ -26,7 +26,7 @@ export class ProjectspageComponent implements OnInit {
 
   ngOnInit(): void {
     this.apollo.watchQuery({
-      query: GET_POSTS
+      query: GET_PROJECTS
     }).valueChanges.subscribe(({ data, error }: any) => {
       this.projects$ = of(data.projects);
       this.randomDelaysForCards = data.projects.map((_: any) => getRandomFloat())
