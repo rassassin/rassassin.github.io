@@ -14,12 +14,13 @@ query GetPosts {
 
 const GET_WORKINFORMATION = gql`
 query GetPosts {
-    workcards {
+    workcards(orderBy: publishedAt_DESC) {
       workCardTitle
-      startYearAndEndYear
       workDescription
       technologyUsed
       organisationUrl
+      startDate
+      endDate
     }
 }`
 

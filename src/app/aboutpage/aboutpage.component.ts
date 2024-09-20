@@ -4,6 +4,7 @@ import { Apollo } from "apollo-angular";
 import { Observable, of } from 'rxjs';
 import { GET_WORKINFORMATION } from '../graphql.operations' 
 import { CommonModule } from '@angular/common';
+import { getDateFormat } from '../../utilities';
 
 
 
@@ -17,7 +18,6 @@ import { CommonModule } from '@angular/common';
 
 export class AboutpageComponent {
   workInformation$: Observable<Array<any>> = of([]);
-  technologyUsedMap:object = {};
   error: any;
   cursor: HTMLElement;
 
@@ -31,23 +31,19 @@ export class AboutpageComponent {
     this.apollo.watchQuery({
       query: GET_WORKINFORMATION
     }).valueChanges.subscribe(({ data, error }: any) => {
-      this.workInformation$ = of(data?.workcards);
-      this.error = error
-      
-      // split technologyUsed string into an array of technologies for each job
-      for(let i = 0; i < data.workcards.length; i++) {
-      let technologyUsedArray = data.workcards[i].technologyUsed.split(",")
-      this.technologyUsedMap[i] = []
-       for(const technology of technologyUsedArray) {
-        this.technologyUsedMap[i].push(technology)
-       }
-      }
-    });
-  }
 
-  @HostListener('document:mousemove', ['$event'])
-  onMouseMove(event: MouseEvent) {
-    this.cursor.style.left = `${event.pageX - 10}px`;
-    this.cursor.style.top = `${event.pageY - 10}px`;
+      // Prevent readonly assignment error
+      const localData = JSON.parse(JSON.stringify(data));
+
+      // Split technologyUsed string into an array of technologies for each job
+      for(let i = 0; i < localData?.workcards.length; i++) {
+        localData.workcards[i].startDate = getDateFormat(localData?.workcards[i].startDate)
+        localData.workcards[i].endDate = getDateFormat(localData?.workcards[i].endDate)
+        localData.workcards[i].technologyUsed = localData?.workcards[i].technologyUsed.split(",")
+      }
+
+      this.workInformation$ = of(localData?.workcards);
+      this.error = error
+    });
   }
 }
