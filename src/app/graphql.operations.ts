@@ -14,7 +14,7 @@ query GetPosts {
 
 const GET_WORKINFORMATION = gql`
 query GetPosts {
-    workcards(orderBy: publishedAt_DESC) {
+    workcards(orderBy: startDate_DESC) {
       workCardTitle
       workDescription
       technologyUsed
