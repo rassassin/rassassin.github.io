@@ -1,20 +1,3 @@
-.custom-cursor {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: rgba(242, 82, 73, 0.7);
-    border-radius: 50%;
-    pointer-events: none;
-    transition: transform 0.1s ease;
-    box-shadow: 0 0 15px 5px rgba(242, 82, 73, 0.7); /* Glowing effect */
-    z-index: 1000;
-  }
-  
-  .custom-cursor.active {
-    transform: scale(1.5);
-    box-shadow: 0 0 30px 10px rgba(242, 82, 73, 0.7);
-  }
-
 .main {
     display: flex;
     align-items: center;
@@ -78,56 +61,6 @@ hr {
     animation-iteration-count: 0.6s;
     animation-fill-mode: forwards;
     width: 100%;
-}
-
-.header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.workHistory {
-    width: 100%;
-    max-width: 1024px;
-    flex-direction: column;
-    display: flex;
-    align-items: center;
-}
-
-.workHistoryContainer{
-    width: 90%;
-}
-
-.workHistoryCardContainer {
-    padding: 20px;
-    display: flex;
-}
-
-.startYearEndYear {
-    flex: 1;
-    margin: 0 10px;
-    padding-top: 4px;
-}
-
-.roleDetails {
-    flex: 4;
-    display: flex;
-    flex-direction: column;
-}
-
-.roleTitle {
-    padding-bottom: 10px;
-}
-
-.technologyUsed {
-    padding-top: 10px;
-    display: flex;
-    justify-content: left;
-    flex-direction: row;
-}
-
-.technologyBadgeContainer{
-    padding-right: 10px;
 }
 
 /* tablet breakpoint */

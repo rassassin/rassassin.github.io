@@ -12,31 +12,7 @@
   <div class="contentDivider">
     <hr />
   </div>
-  <div class="workHistory">
-    <h1 class="header">Work History</h1>
-    <div class="workHistoryContainer">
-      <div *ngFor="let information of workInformation$ | async; let i = index;">
-        <div class="workHistoryCardContainer">
-          <div class="startYearEndYear">
-            <p>{{ information?.startDate }} - {{ information?.endDate }}</p>
-          </div>
-          <div class="roleDetails">
-            <div class="roleTitle card-title">
-              <p>{{ information?.workCardTitle }}</p>
-            </div>
-            <div class="roleDescription">
-              <p>{{ information?.workDescription }}</p>
-            </div>
-            <div class="technologyUsed">
-              <div *ngFor="let technology of information?.technologyUsed">
-                <div class="technologyBadgeContainer card-actions justify-end">
-                  <div class="technologyBadge badge badge-outline">{{ technology }}</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <section class="workHistorySection">
+    <app-workhistory></app-workhistory>
+  </section>
 </div>

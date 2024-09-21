@@ -1,24 +1,20 @@
-import { Component, HostListener, Input, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component} from '@angular/core';
 import { Apollo } from "apollo-angular";
 import { Observable, of } from 'rxjs';
 import { GET_WORKINFORMATION } from '../graphql.operations' 
 import { CommonModule } from '@angular/common';
 import { getDateFormat } from '../../utilities';
-import { WorkhistoryComponent } from "../workhistory/workhistory.component";
 
 @Component({
-  selector: 'app-aboutpage',
+  selector: 'app-workhistory',
   standalone: true,
-  imports: [RouterModule, CommonModule, WorkhistoryComponent],
-  templateUrl: './aboutpage.component.html',
-  styleUrl: './aboutpage.component.css'
+  imports: [CommonModule],
+  templateUrl: './workhistory.component.html',
+  styleUrl: './workhistory.component.css'
 })
-
-export class AboutpageComponent {
+export class WorkhistoryComponent {
   workInformation$: Observable<Array<any>> = of([]);
   error: any;
-  cursor: HTMLElement;
 
   constructor(private apollo: Apollo) { }
 
@@ -33,7 +29,12 @@ export class AboutpageComponent {
       // Split technologyUsed string into an array of technologies for each job
       for(let i = 0; i < localData?.workcards.length; i++) {
         localData.workcards[i].startDate = getDateFormat(localData?.workcards[i].startDate)
-        localData.workcards[i].endDate = getDateFormat(localData?.workcards[i].endDate)
+        // Set the curerent role's end date to be "Present"
+        if(localData.workcards[i] === localData.workcards[0]) { 
+          localData.workcards[i].endDate = "Present"
+        } else {
+          localData.workcards[i].endDate = getDateFormat(localData?.workcards[i].endDate)
+        }
         localData.workcards[i].technologyUsed = localData?.workcards[i].technologyUsed.split(",")
       }
 

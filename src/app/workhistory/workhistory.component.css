@@ -1,0 +1,40 @@
+.workHistory {
+    width: 100%;
+    max-width: 1024px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 3rem;
+    margin-bottom: 60px;
+    font-weight: 700;
+    color: oklch(0.746477 0.0216 264.436);
+}
+
+.textContainer {
+    padding: 0 10px;
+}
+
+.technologyUsed {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.technologyBadgeContainer{
+    padding:0px 10px 0 10px;
+}
+
+.leftPadding {
+    padding-left: 10px;
+}
+
+.rightPadding {
+    padding-right: 10px;
+}
