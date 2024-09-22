@@ -19,9 +19,9 @@
     pointer-events: none; /* Prevents interactions with the glow */
     width: 600px; /* Increase the size of the glow significantly */
     height: 600px;
-    background: rgba(242, 82, 73, 0.02); /* Make the glow even more subtle by reducing opacity */
+    background: rgba(255,255,255,0.02); /* Make the glow even more subtle by reducing opacity */
     border-radius: 50%;
-    filter: blur(50px); /* Increase blur for a more diffused and subtle glow */
+    filter: blur(100px); /* Increase blur for a more diffused and subtle glow */
     transform: translate(-50%, -50%);
     transition: transform 0.05s ease-out;
     z-index: 9999;
