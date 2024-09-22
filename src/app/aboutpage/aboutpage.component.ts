@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { WorkhistoryComponent } from "../workhistory/workhistory.component";
@@ -12,4 +12,13 @@ import { WorkhistoryComponent } from "../workhistory/workhistory.component";
 })
 
 export class AboutpageComponent {
+  
+  @HostListener('document:mousemove', ['$event'])
+  onMouseMove(event: MouseEvent) {
+    const cursorGlow = document.getElementById('cursorGlow');
+    if (cursorGlow) {
+      cursorGlow.style.left = `${event.pageX}px`;
+      cursorGlow.style.top = `${event.pageY}px`;
+    }
+  }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { NavbarComponent } from "./navbar/navbar.component";
 
@@ -9,6 +9,4 @@ import { NavbarComponent } from "./navbar/navbar.component";
     styleUrl: './app.component.css',
     imports: [RouterModule, NavbarComponent]
 })
-export class AppComponent {
-  title = 'portfolio';
-}
+export class AppComponent {}

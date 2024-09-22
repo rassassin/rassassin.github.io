@@ -1,0 +1,20 @@
+.custom-cursor {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(242, 82, 73, 0.7);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: transform 0.1s ease;
+    box-shadow: 0 0 15px 5px rgba(242, 82, 73, 0.7); /* Glowing effect */
+    z-index: 1000;
+  }
+  
+  html:hover .custom-cursor {
+    opacity: 1;
+  }
+  
+  html:not(:hover) .custom-cursor {
+    opacity: 0; /* Hide cursor when not hovering */
+  }
+  

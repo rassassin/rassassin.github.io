@@ -14,6 +14,19 @@
     overflow: hidden; /* Prevents content from being visible outside the container */
 }
 
+.cursor-glow {
+    position: absolute;
+    pointer-events: none; /* Prevents interactions with the glow */
+    width: 600px; /* Increase the size of the glow significantly */
+    height: 600px;
+    background: rgba(242, 82, 73, 0.02); /* Make the glow even more subtle by reducing opacity */
+    border-radius: 50%;
+    filter: blur(50px); /* Increase blur for a more diffused and subtle glow */
+    transform: translate(-50%, -50%);
+    transition: transform 0.05s ease-out;
+    z-index: 9999;
+}
+  
 .aboutText {
     flex: 1;
     transform: translateX(-100vw); /* Start outside the left of the screen */

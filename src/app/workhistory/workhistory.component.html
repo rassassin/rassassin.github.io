@@ -10,8 +10,8 @@
                             clip-rule="evenodd" />
                     </svg>
                 </div>
-
-                <div [ngClass]="(i % 2) ? 'timeline-end mb-10' : 'timeline-start mb-10 md:text-end'">
+                <div class="workHistoryCardContainer"
+                    [ngClass]="(i % 2) ? 'timeline-end mb-10' : 'timeline-start mb-10 md:text-end'">
                     <a href="{{ information?.organisationUrl }}" target="_blank">
                         <div class="textContainer">
                             <time class="font-mono italic">{{ information?.startDate }} - {{ information?.endDate
@@ -24,14 +24,13 @@
                         <div class="technologyUsed"
                             [ngStyle]="{'justify-content': (i % 2) ? 'flex-start' : 'flex-end'}">
                             <div *ngFor="let technology of information?.technologyUsed">
-                                <div [ngClass]="(i % 2) ? 'leftPadding' : 'rightPadding'">
+                                <div [ngClass]="(i % 2) ? 'rightPadding' : 'leftPadding'">
                                     <div class="technologyBadge badge badge-outline">{{ technology }}</div>
                                 </div>
                             </div>
                         </div>
                     </a>
                 </div>
-
                 <hr />
             </li>
         </ul>
