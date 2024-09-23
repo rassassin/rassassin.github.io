@@ -1,5 +1,5 @@
 .navbar {
-    animation: slideDown 0.6s ease-out forwards;
+    animation: 0.6s ease-in-out 0s normal forwards 1 slideDown;
 }
 
 .navbarBtn {
@@ -15,4 +15,4 @@
       transform: translateY(0);
       opacity: 1;
     }
-  }
+}
