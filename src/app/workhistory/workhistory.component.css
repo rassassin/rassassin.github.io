@@ -8,6 +8,7 @@
 }
 
 .header {
+    opacity: 0; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,7 +16,7 @@
     margin-bottom: 60px;
     font-weight: 700;
     color: oklch(0.746477 0.0216 264.436);
-    animation: slideInFromTop 0.6s ease-in-out forwards;
+    animation: slideDown 0.6s ease-out forwards;
 }
 
 hr, svg {
@@ -24,14 +25,21 @@ hr, svg {
     margin: 0 20px;
 }
 
-.workHistoryCardContainer {
-    animation: fadeInAnimation ease 3s;
-    animation-iteration-count: 0.6s;
-}
+/* .workHistoryCardContainer {
+    
+} */
 
 .workHistoryCardContainer:hover {
     transform: scale(1.02); /* Slightly enlarges the card */
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2); /* Adds a deeper shadow */
+}
+
+.timeline-start {
+    animation: slideInFromLeft 0.6s ease forwards;
+}
+
+.timeline-end {
+    animation: slideInFromRight 0.6s ease forwards;
 }
 
 .technologyUsed {
@@ -48,7 +56,29 @@ hr, svg {
     padding-right: 10px;
 }
 
-  @keyframes fadeInAnimation {
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-50%); /* Start from outside the screen */
+        opacity: 0; /* Start invisible */
+    }
+    to {
+        transform: translateX(0); /* End at normal position */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(50%); /* Start from outside the screen */
+        opacity: 0; /* Start invisible */
+    }
+    to {
+        transform: translateX(0); /* End at normal position */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+@keyframes fadeInAnimation {
     0% {
         opacity: 0;
     }
@@ -58,13 +88,14 @@ hr, svg {
     }
 }
 
-@keyframes slideInFromTop {
-    from {
-        top: -75px;
-        opacity: 0;
-      }
-    to  {
-        top: 0;
-        opacity: 1;
-      }
-}
+@keyframes slideDown {
+    0% {
+      transform: translateY(-200%);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
