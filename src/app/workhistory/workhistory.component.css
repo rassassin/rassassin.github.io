@@ -20,7 +20,7 @@
 }
 
 hr, svg {
-    animation: fadeInAnimation ease 3s;
+    animation: ease 3s fadeInAnimation;
     margin: 0 20px;
 }
 
@@ -35,16 +35,16 @@ hr, svg {
 }
 
 .sideFromLeft {
-    animation: 0.6s ease-in-out 0s normal forwards 1 slideInFromLeft;
+    animation: 0.7s ease-in-out 0s normal forwards 1 slideInFromLeft;
 }
 
 .sideFromRight {
-    animation: 0.6s ease-in-out 0s normal forwards 1 slideInFromRight;
+    animation: 0.7s ease-in-out 0s normal forwards 1 slideInFromRight;
 }
 
 @media(max-width: 768px) {
     .sideFromLeft {
-        animation: 0.6s ease-in-out 0s normal forwards 1 slideInFromRight;
+        animation: 0.7s ease-in-out 0s normal forwards 1 slideInFromRight;
     }
 }
 
