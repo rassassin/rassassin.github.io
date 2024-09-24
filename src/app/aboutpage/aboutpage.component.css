@@ -3,6 +3,8 @@
     align-items: center;
     width: 100%;
     flex-direction: column;
+    position: relative; /* Make sure the glow effect stays within the container */
+    overflow: hidden;
 }
 
 .aboutContent {
@@ -25,6 +27,7 @@
     transform: translate(-50%, -50%);
     transition: transform 0.05s ease-out;
     z-index: 9999;
+    clip-path: inset(0 0 0 0);
 }
   
 .aboutText {
