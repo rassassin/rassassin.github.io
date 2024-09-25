@@ -4,7 +4,7 @@
     width: 100%;
     flex-direction: column;
     position: relative; /* Make sure the glow effect stays within the container */
-    overflow: hidden;
+    overflow: hidden;   /* Prevents content from being visible outside the container */
 }
 
 .aboutContent {
@@ -13,7 +13,7 @@
     max-width: 1024px;
     margin-top: 50px;
     padding: 0 50px 50px;
-    overflow: hidden; /* Prevents content from being visible outside the container */
+    overflow: hidden; 
 }
 
 .cursor-glow {
