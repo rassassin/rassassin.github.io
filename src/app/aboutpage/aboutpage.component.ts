@@ -18,7 +18,7 @@ export class AboutpageComponent {
     const cursorGlow = document.getElementById('cursorGlow');
     if (cursorGlow) {
       cursorGlow.style.left = `${event.pageX}px`;
-      cursorGlow.style.top = `${event.pageY}px`;
+      cursorGlow.style.top = `${event.pageY - 75}px`;
     }
   }
 }
