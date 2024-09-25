@@ -17,7 +17,7 @@
 }
 
 .cursor-glow {
-    position: absolute;
+    position: fixed;
     pointer-events: none; /* Prevents interactions with the glow */
     width: 600px; /* Increase the size of the glow significantly */
     height: 600px;
