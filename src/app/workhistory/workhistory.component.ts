@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { Apollo } from 'apollo-angular';
 import { Observable, of } from 'rxjs';
-import { GET_WORKINFORMATION } from '../graphql.operations';
 import { CommonModule } from '@angular/common';
 import { getDateFormat } from '../../utilities';
+import { WorkinformationService } from '../workinformation.service';
 
 @Component({
   selector: 'app-workhistory',
@@ -16,36 +15,29 @@ export class WorkhistoryComponent {
   workInformation$: Observable<Array<any>> = of([]);
   error: any;
 
-  constructor(private apollo: Apollo) {}
+  constructor(private WorkinformationService: WorkinformationService) {}
 
   ngOnInit(): void {
-    this.apollo
-      .watchQuery({
-        query: GET_WORKINFORMATION,
-      })
-      .valueChanges.subscribe(({ data, error }: any) => {
-        // Prevent readonly assignment error
-        const localData = JSON.parse(JSON.stringify(data));
+    this.WorkinformationService.getWorkInformation().subscribe(
+      (workInformation) => {
+        const localData = JSON.parse(JSON.stringify(workInformation));
 
-        // Split technologyUsed string into an array of technologies for each job
-        for (let i = 0; i < localData?.workcards.length; i++) {
-          localData.workcards[i].startDate = getDateFormat(
-            localData?.workcards[i].startDate
-          );
+        for (let i = 0; i < localData.length; i++) {
+          localData[i].startDate = getDateFormat(localData[i].startDate);
           // Set the curerent role's end date to be "Present"
-          if (localData.workcards[i] === localData.workcards[0]) {
-            localData.workcards[i].endDate = 'Present';
+          if (localData[i] === localData[0]) {
+            localData[i].endDate = 'Present';
           } else {
-            localData.workcards[i].endDate = getDateFormat(
-              localData?.workcards[i].endDate
-            );
+            localData[i].endDate = getDateFormat(localData[i].endDate);
           }
-          localData.workcards[i].technologyUsed =
-            localData?.workcards[i].technologyUsed.split(',');
+          localData[i].technologyUsed = localData[i].technologyUsed.split(',');
         }
 
-        this.workInformation$ = of(localData?.workcards);
+        this.workInformation$ = of(localData);
+      },
+      (error) => {
         this.error = error;
-      });
+      }
+    );
   }
 }

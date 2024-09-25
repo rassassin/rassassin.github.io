@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { Apollo } from 'apollo-angular';
-import { GET_PROJECTS } from '../graphql.operations';
 import { Observable, of } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { ModalComponent } from '../modal/modal.component';
 import { MatDialog } from '@angular/material/dialog';
 import { getRandomFloat } from '../../utilities';
+import { ProjectService } from '../projects.service';
 
 @Component({
   selector: 'app-projectspage',
@@ -20,20 +19,21 @@ export class ProjectspageComponent implements OnInit {
   error: any;
   randomDelaysForCards: Array<number> = [];
 
-  constructor(private apollo: Apollo, private dialogRef: MatDialog) {}
+  constructor(
+    private projectService: ProjectService,
+    private dialogRef: MatDialog
+  ) {}
 
   ngOnInit(): void {
-    this.apollo
-      .watchQuery({
-        query: GET_PROJECTS,
-      })
-      .valueChanges.subscribe(({ data, error }: any) => {
-        this.projects$ = of(data.projects);
-        this.randomDelaysForCards = data.projects.map((_: any) =>
-          getRandomFloat()
-        );
+    this.projectService.getProjects().subscribe(
+      (projects) => {
+        this.projects$ = of(projects);
+        this.randomDelaysForCards = projects.map(() => getRandomFloat());
+      },
+      (error) => {
         this.error = error;
-      });
+      }
+    );
   }
 
   openDialog(projectData: any) {
