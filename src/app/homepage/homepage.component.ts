@@ -1,4 +1,4 @@
-import { Component, HostListener} from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -6,10 +6,9 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [RouterModule],
   templateUrl: './homepage.component.html',
-  styleUrl: './homepage.component.css'
+  styleUrl: './homepage.component.css',
 })
-
-export class HomepageComponent  {
+export class HomepageComponent {
   canvas: HTMLCanvasElement;
   view: CanvasRenderingContext2D;
   balls: Ball[] = [];
@@ -18,7 +17,7 @@ export class HomepageComponent  {
   constructor() {}
 
   ngOnInit(): void {
-    console.log("Starting. . .");
+    console.log('Starting. . .');
   }
 
   ngAfterViewInit(): void {
@@ -38,8 +37,8 @@ export class HomepageComponent  {
   setCanvasSize(): void {
     this.canvas.height = window.screen.availHeight;
     this.canvas.width = window.innerWidth;
-    this.view.fillStyle = "white";
-    this.view.strokeStyle = "white";
+    this.view.fillStyle = 'white';
+    this.view.strokeStyle = 'white';
   }
 
   initializeBalls(): void {
@@ -71,8 +70,10 @@ export class HomepageComponent  {
     const yDiff = (b1.y - b2.y) ** 2;
     const lineDistance = 200 - Math.sqrt(xDiff + yDiff);
     if (lineDistance <= 200) {
-      const colourDist = 255 - ((lineDistance / 200) * 255)
-      const strokeStyle = `rgba(255, ${colourDist}, ${colourDist}, ${lineDistance / 80})`;
+      const colourDist = 255 - (lineDistance / 200) * 255;
+      const strokeStyle = `rgba(255, ${colourDist}, ${colourDist}, ${
+        lineDistance / 80
+      })`;
       this.view.strokeStyle = strokeStyle;
 
       this.view.beginPath();
@@ -94,7 +95,11 @@ class Ball {
   canvas: HTMLCanvasElement;
   view: CanvasRenderingContext2D;
 
-  constructor(canvas: HTMLCanvasElement, view: CanvasRenderingContext2D, ballSize: number) {
+  constructor(
+    canvas: HTMLCanvasElement,
+    view: CanvasRenderingContext2D,
+    ballSize: number
+  ) {
     this.canvas = canvas;
     this.view = view;
     this.width = ballSize;
