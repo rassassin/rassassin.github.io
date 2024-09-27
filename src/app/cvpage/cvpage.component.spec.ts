@@ -8,9 +8,8 @@ describe('CvpageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CvpageComponent]
-    })
-    .compileComponents();
+      imports: [CvpageComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(CvpageComponent);
     component = fixture.componentInstance;

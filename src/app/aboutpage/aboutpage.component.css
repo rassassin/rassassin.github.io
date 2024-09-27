@@ -1,124 +1,128 @@
 .main {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    flex-direction: column;
-    position: relative; /* Make sure the glow effect stays within the container */
-    overflow: hidden;   /* Prevents content from being visible outside the container */
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+  position: relative; /* Make sure the glow effect stays within the container */
+  overflow: hidden; /* Prevents content from being visible outside the container */
 }
 
 .aboutContent {
-    display: flex;
-    justify-content: center;
-    max-width: 1024px;
-    margin-top: 50px;
-    padding: 0 50px 50px;
-    overflow: hidden; 
+  display: flex;
+  justify-content: center;
+  max-width: 1024px;
+  margin-top: 50px;
+  padding: 0 50px 50px;
+  overflow: hidden;
 }
 
 .cursor-glow {
-    position: absolute;
-    pointer-events: none; /* Prevents interactions with the glow */
-    width: 600px; /* Increase the size of the glow significantly */
-    height: 600px;
-    background: rgba(255,255,255,0.02); /* Make the glow even more subtle by reducing opacity */
-    border-radius: 50%;
-    filter: blur(100px); /* Increase blur for a more diffused and subtle glow */
-    transform: translate(-50%, -50%);
-    transition: transform 0.05s ease-out;
-    z-index: 9999;
-    clip-path: inset(0 0 0 0);
+  position: absolute;
+  pointer-events: none; /* Prevents interactions with the glow */
+  width: 600px; /* Increase the size of the glow significantly */
+  height: 600px;
+  background: rgba(
+    255,
+    255,
+    255,
+    0.02
+  ); /* Make the glow even more subtle by reducing opacity */
+  border-radius: 100%;
+  filter: blur(100px); /* Increase blur for a more diffused and subtle glow */
+  transform: translate(-50%, -50%);
+  transition: 0.05s ease-out transform;
+  z-index: 9999;
 }
-  
+
 .aboutText {
-    flex: 1;
-    transform: translateX(-100vw); /* Start outside the left of the screen */
-    animation:  0.6s ease-in-out 0s normal forwards 1 slideInFromLeft; /* Trigger animation on load */
+  flex: 1;
+  transform: translateX(-100vw); /* Start outside the left of the screen */
+  animation: 0.6s ease-in-out 0s normal forwards 1 slideInFromLeft; /* Trigger animation on load */
 }
 
 h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    font-weight: 700;
-    color: oklch(0.746477 0.0216 264.436);
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: oklch(0.746477 0.0216 264.436);
 }
 
 .aboutText p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: oklch(0.746477 0.0216 264.436);
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: oklch(0.746477 0.0216 264.436);
 }
 
 .aboutImageContainer {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    transform: translateX(200vw);
-    animation:  0.6s ease-in-out 0s normal forwards 1 slideInFromRight; /* Trigger animation on load */
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  transform: translateX(200vw);
+  animation: 0.6s ease-in-out 0s normal forwards 1 slideInFromRight; /* Trigger animation on load */
 }
 
 .aboutImage {
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/9e/Placeholder_Person.jpg');
-    background-size: cover;
-    height: 250px;
-    width: 250px;
-    border-radius: 50%;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/9/9e/Placeholder_Person.jpg");
+  background-size: cover;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
 }
 
 .contentDivider {
-    padding: 3%;
-    width: 100%;
-    max-width: 1024px;
+  padding: 3%;
+  width: 100%;
+  max-width: 1024px;
 }
 
 hr {
-    flex-direction: column;
-    animation: 0.6s ease-in-out 0s normal forwards 1 fadeInAnimation;
-    animation-fill-mode: forwards;
-    width: 100%;
+  flex-direction: column;
+  animation: 0.6s ease-in-out 0s normal forwards 1 fadeInAnimation;
+  animation-fill-mode: forwards;
+  width: 100%;
 }
 
 /* tablet breakpoint */
 @media (max-width: 768px) {
-    .main {
-        flex-direction: column;
-        text-align: center;
-        margin: 0;
-    }
-    .aboutText {
-        padding-right: 0;
-    }
+  .main {
+    flex-direction: column;
+    text-align: center;
+    margin: 0;
+  }
+  .aboutText {
+    padding-right: 0;
+  }
 }
 
 /* Animation keyframes */
 @keyframes slideInFromLeft {
-    from {
-        transform: translateX(-50%); /* Start from outside the screen */
-        opacity: 0; /* Start invisible */
-    }
-    to {
-        transform: translateX(0); /* End at normal position */
-        opacity: 1; /* Fully visible */
-    }
+  from {
+    transform: translateX(-50%); /* Start from outside the screen */
+    opacity: 0; /* Start invisible */
+  }
+  to {
+    transform: translateX(0); /* End at normal position */
+    opacity: 1; /* Fully visible */
+  }
 }
 
 @keyframes slideInFromRight {
-    from {
-        transform: translateX(50%); /* Start from outside the screen */
-        opacity: 0; /* Start invisible */
-    }
-    to {
-        transform: translateX(0); /* End at normal position */
-        opacity: 1; /* Fully visible */
-    }
+  from {
+    transform: translateX(50%); /* Start from outside the screen */
+    opacity: 0; /* Start invisible */
+  }
+  to {
+    transform: translateX(0); /* End at normal position */
+    opacity: 1; /* Fully visible */
+  }
 }
 
 @keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
 
-    100% {
-        opacity: 1;
-    }
+  100% {
+    opacity: 1;
+  }
 }

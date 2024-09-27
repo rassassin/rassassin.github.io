@@ -1,13 +1,15 @@
 import { TestBed } from '@angular/core/testing';
-
-import { ProjectsService } from './projects.service';
+import { ProjectService } from './projects.service';
+import { Apollo } from 'apollo-angular';
 
 describe('ProjectsService', () => {
-  let service: ProjectsService;
+  let service: ProjectService;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(ProjectsService);
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [ProjectService, Apollo],
+    }).compileComponents();
+    service = TestBed.inject(ProjectService);
   });
 
   it('should be created', () => {

@@ -20,7 +20,8 @@
         </li>
     </div>
     <div class="navbar-end">
-        <a class="btn btn-ghost btn-circle">
+        <a class="btn btn-ghost btn-circle" [routerLinkActive]="['']" [routerLinkActiveOptions]="{ exact: true }"
+            [routerLink]="['/CV']">
             <div class="indicator">
                 <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                     width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
@@ -30,7 +31,8 @@
                 </svg>
             </div>
         </a>
-        <a class="btn btn-ghost btn-circle">
+        <a href="https://github.com/rassassin?tab=overview&from=2024-09-01&to=2024-09-27" target="_blank"
+            class="btn btn-ghost btn-circle">
             <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                 width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                 <path fill-rule="evenodd"
@@ -38,7 +40,7 @@
                     clip-rule="evenodd" />
             </svg>
         </a>
-        <a class="btn btn-ghost btn-circle">
+        <a href="https://www.linkedin.com/in/reece-thandi-6a3982230/" target="_blank" class="btn btn-ghost btn-circle">
             <div class="indicator">
                 <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                     width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
