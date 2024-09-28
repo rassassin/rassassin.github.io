@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { WorkinformationService } from './workinformation.service';
 import { Apollo } from 'apollo-angular';
 import { of } from 'rxjs';
@@ -53,7 +52,7 @@ describe('WorkinformationService', () => {
     } as any);
 
     service.getWorkInformation().subscribe((result) => {
-      expect(result).toEqual(mockWorkInformation);
+      expect(result).toEqual(mockWorkInformation.workcards);
       done();
     });
 
