@@ -1,0 +1,7 @@
+.cvContainer {
+  display: flex;
+  max-width: 1024px;
+  align-items: center;
+  margin-top: 20px;
+  border-radius: 10px;
+}
