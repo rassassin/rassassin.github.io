@@ -1,10 +1,15 @@
 import { TestBed } from '@angular/core/testing';
+
 import { AppComponent } from './app.component';
+import { ActivatedRoute } from '@angular/router';
 
 describe('AppComponent', () => {
+  class MockActivatedRoute {}
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [AppComponent],
+      providers: [{ provide: ActivatedRoute, useClass: MockActivatedRoute }],
     }).compileComponents();
   });
 

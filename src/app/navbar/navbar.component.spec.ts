@@ -1,27 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NavbarComponent } from './navbar.component';
-import {
-  ActivatedRoute,
-  RouterLinkActive,
-  RouterModule,
-} from '@angular/router';
-import { NgClass } from '@angular/common';
-import { BrowserModule } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 
 describe('NavbarComponent', () => {
   let component: NavbarComponent;
   let fixture: ComponentFixture<NavbarComponent>;
+  class MockActivatedRoute {}
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        NavbarComponent,
-        RouterModule,
-        NgClass,
-        RouterLinkActive,
-        ActivatedRoute,
-      ],
+      imports: [NavbarComponent],
+      providers: [{ provide: ActivatedRoute, useClass: MockActivatedRoute }],
     }).compileComponents();
 
     fixture = TestBed.createComponent(NavbarComponent);
