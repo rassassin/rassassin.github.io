@@ -1,6 +1,14 @@
+.main {
+  max-width: 100%;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+
 .cvContainer {
   display: flex;
-  max-width: 1024px;
+  width: 1024px;
+  justify-content: center;
   align-items: center;
   margin-top: 20px;
   border-radius: 10px;
