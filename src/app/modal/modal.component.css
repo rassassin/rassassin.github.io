@@ -1,31 +1,28 @@
-.mat-mdc-dialog-surface, .mdc-dialog__surface {
-    background-color: #1D232A !important;
-}
-
 .modalContainer {
-    font-family: 'Roboto', 'Helvetica Neue', sans-serif;
-    background-color: #1D232A; /* Ensure the background color fills the container */
-    border-radius: 10px; /* Adjust border-radius for a smoother curve */
-    overflow: hidden;
-    border: 2px solid #1D232A; 
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+  background-color: #1d232a; /* Ensure the background color fills the container */
+  border-radius: 10px; /* Adjust border-radius for a smoother curve */
+  overflow: hidden;
+  border: 2px solid #1d232a;
 }
 
 .modalActionBtn {
-    padding: 0 20px;
-    margin: 0 5px;
-    width: 75px;
+  padding: 0 20px;
+  margin: 0 5px;
+  width: 75px;
 }
 
-.modalProjectText, .modalProjectHeader {
-    color: oklch(0.746477 0.0216 264.436);
+.modalProjectText,
+.modalProjectHeader {
+  color: oklch(0.746477 0.0216 264.436);
 }
 
 .modalProjectHeader {
-    font-weight: 600;
-    font-size: 20px;
-    text-align: center;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
 }
 
 .modalProjectText {
-    font-size: 16px;
+  font-size: 16px;
 }

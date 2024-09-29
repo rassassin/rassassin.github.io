@@ -7,7 +7,7 @@
   margin-bottom: 50px;
 }
 
-.john {
+.workHistoryHeader {
   opacity: 0;
   display: flex;
   flex-direction: column;
@@ -24,10 +24,6 @@ svg {
   animation: ease 3s fadeInAnimation;
   margin: 0 20px;
 }
-
-/* .workHistoryCardContainer {
-    
-} */
 
 .workHistoryCardContainer:hover {
   transform: scale(1.02);
