@@ -1,5 +1,5 @@
 .main {
-  max-width: 100%;
+  width: 100%;
   flex-direction: column;
   display: flex;
   align-items: center;
@@ -7,9 +7,91 @@
 
 .cvContainer {
   display: flex;
-  width: 1024px;
+  flex-direction: column;
+  max-width: 1024px;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
   border-radius: 10px;
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+  width: 1024px;
+  margin-top: 50px;
+  padding: 0 50px 50px;
+  overflow: hidden;
+}
+
+.personalPhotoContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.personalPhoto {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/9/9e/Placeholder_Person.jpg");
+  background-size: cover;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+}
+
+.name {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.nameHeader {
+  font-size: 3rem;
+  font-weight: 700;
+  color: oklch(0.746477 0.0216 264.436);
+}
+
+.personalDetailsAndExperienceContainer {
+  display: flex;
+  width: 1024px;
+  padding: 0 50px 50px;
+}
+
+.workExperienceColumn {
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+}
+
+.relevantExperienceHeader {
+  font-size: 2rem;
+  font-weight: 700;
+  color: oklch(0.746477 0.0216 264.436);
+  margin-top: 10px;
+  align-items: center;
+}
+
+.experienceHeader,
+.aboutMeHeader {
+  margin-top: 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: oklch(0.746477 0.0216 264.436);
+}
+
+.startAndFinishYear {
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+
+li::marker {
+  color: red;
+}
+
+.personalDetailsColumn {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-top: 10px;
 }
