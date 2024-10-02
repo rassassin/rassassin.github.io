@@ -72,17 +72,28 @@
   align-items: center;
 }
 
+.experienceHeaderAndYear {
+  display: flex;
+  align-items: center;
+  margin: 10px 0 5px;
+}
+
+.startAndFinishYear {
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.experienceHeader {
+  flex-direction: row;
+  margin-right: 10px;
+}
+
 .experienceHeader,
 .aboutMeHeader {
   margin-top: 10px;
   font-size: 1.5rem;
   font-weight: 700;
   color: oklch(0.746477 0.0216 264.436);
-}
-
-.startAndFinishYear {
-  margin-bottom: 10px;
-  padding-left: 10px;
 }
 
 li::marker {
@@ -94,4 +105,5 @@ li::marker {
   flex: 1;
   flex-direction: column;
   margin-top: 10px;
+  margin-left: 20px;
 }
