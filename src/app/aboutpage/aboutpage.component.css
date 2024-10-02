@@ -79,7 +79,6 @@ hr {
   flex-direction: column;
   animation: 0.6s ease-in-out 0s normal forwards 1 fadeInAnimation;
   animation-fill-mode: forwards;
-  width: 100%;
 }
 
 /* tablet breakpoint */
