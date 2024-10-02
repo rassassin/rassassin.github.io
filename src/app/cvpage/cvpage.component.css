@@ -65,17 +65,17 @@
 }
 
 .relevantExperienceHeader {
+  padding-top: 20px;
   font-size: 2rem;
   font-weight: 700;
   color: oklch(0.746477 0.0216 264.436);
-  margin-top: 10px;
   align-items: center;
 }
 
 .experienceHeaderAndYear {
   display: flex;
   align-items: center;
-  margin: 10px 0 5px;
+  margin: 0px 0 5px;
 }
 
 .startAndFinishYear {
@@ -89,7 +89,7 @@
 }
 
 .experienceHeader,
-.aboutMeHeader {
+.sideBarHeaders {
   margin-top: 10px;
   font-size: 1.5rem;
   font-weight: 700;
@@ -106,4 +106,13 @@ li::marker {
   flex-direction: column;
   margin-top: 10px;
   margin-left: 20px;
+}
+
+.softwareDevSummary {
+  margin-top: 10px;
+}
+
+hr {
+  margin: 20px 0 20px;
+  border-top: 1.5px solid;
 }
