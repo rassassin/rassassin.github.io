@@ -108,11 +108,28 @@ li::marker {
   margin-left: 20px;
 }
 
-.softwareDevSummary {
+.sideBarDescription {
   margin-top: 10px;
 }
 
 hr {
   margin: 20px 0 20px;
   border-top: 1.5px solid;
+}
+
+.sidebarSubHeaders {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.educationContainer {
+  display: flex;
+}
+
+.gradeHeaders {
+  flex: 5;
+}
+
+.grades {
+  flex: 1;
 }
