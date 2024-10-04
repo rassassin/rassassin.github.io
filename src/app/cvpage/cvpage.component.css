@@ -48,8 +48,8 @@
 
 .nameHeader {
   font-size: 3rem;
-  font-weight: 700;
-  color: oklch(0.746477 0.0216 264.436);
+  font-weight: 400;
+  color: rgb(14, 23, 43);
 }
 
 .personalDetailsAndExperienceContainer {
@@ -67,8 +67,8 @@
 .relevantExperienceHeader {
   padding-top: 20px;
   font-size: 2rem;
-  font-weight: 700;
-  color: oklch(0.746477 0.0216 264.436);
+  font-weight: 400;
+  color: rgb(14, 23, 43);
   align-items: center;
 }
 
@@ -81,6 +81,7 @@
 .startAndFinishYear {
   font-style: italic;
   margin-top: 10px;
+  color: rgb(14, 23, 43);
 }
 
 .experienceHeader {
@@ -92,8 +93,12 @@
 .sideBarHeaders {
   margin-top: 10px;
   font-size: 1.5rem;
-  font-weight: 700;
-  color: oklch(0.746477 0.0216 264.436);
+  font-weight: 400;
+  color: rgb(14, 23, 43);
+}
+
+ul {
+  color: rgb(14, 23, 43);
 }
 
 li::marker {
@@ -109,6 +114,7 @@ li::marker {
 }
 
 .sideBarDescription {
+  color: rgb(14, 23, 43);
   margin-top: 10px;
 }
 
@@ -118,6 +124,7 @@ hr {
 }
 
 .sidebarSubHeaders {
+  color: rgb(14, 23, 43);
   font-weight: bold;
   margin-top: 10px;
 }
