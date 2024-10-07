@@ -11,23 +11,21 @@ import { Observable, of } from 'rxjs';
 export class CvpageComponent {
   CVInformation$: Observable<Array<any>> = of([]);
   error: any;
-  constructor(CVService) {}
+  constructor(/*CVService*/) {}
 
   ngOnInit() {
-    this.CVService.getWorkInformation().subscribe(
-      (CVInformation) => {
-        const localData = JSON.parse(JSON.stringify(CVInformation));
-
-        for (let i = 0; i < localData.length; i++) {
-          localData[i].roleResponsibilities =
-            localData[i].roleResponsibilities.split(',');
-        }
-
-        this.CVInformation$ = of(localData);
-      },
-      (error) => {
-        this.error = error;
-      }
-    );
+    //   this.CVService.getWorkInformation().subscribe(
+    //     (CVInformation) => {
+    //       const localData = JSON.parse(JSON.stringify(CVInformation));
+    //       for (let i = 0; i < localData.length; i++) {
+    //         localData[i].roleResponsibilities =
+    //           localData[i].roleResponsibilities.split(',');
+    //       }
+    //       this.CVInformation$ = of(localData);
+    //     },
+    //     (error) => {
+    //       this.error = error;
+    //     }
+    //   );
   }
 }
