@@ -21,7 +21,6 @@ export class WorkhistoryComponent {
     this.WorkinformationService.getWorkInformation().subscribe(
       (workInformation) => {
         const localData = JSON.parse(JSON.stringify(workInformation));
-        console.log(localData);
 
         for (let i = 0; i < localData.length; i++) {
           localData[i].startDate = getDateFormat(localData[i].startDate);
