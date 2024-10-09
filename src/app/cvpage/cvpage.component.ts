@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { CVInformationService } from '../cvinformation.service';
 
 @Component({
   selector: 'app-cvpage',
@@ -12,21 +13,21 @@ import { CommonModule } from '@angular/common';
 export class CvpageComponent {
   CVInformation$: Observable<Array<any>> = of([]);
   error: any;
-  constructor(/*CVService*/) {}
+  constructor(private CVInformationService: CVInformationService) {}
 
   ngOnInit() {
-    //   this.CVService.getWorkInformation().subscribe(
-    //     (CVInformation) => {
-    //       const localData = JSON.parse(JSON.stringify(CVInformation));
-    //       for (let i = 0; i < localData.length; i++) {
-    //         localData[i].roleResponsibilities =
-    //           localData[i].roleResponsibilities.split(',');
-    //       }
-    //       this.CVInformation$ = of(localData);
-    //     },
-    //     (error) => {
-    //       this.error = error;
-    //     }
-    //   );
+    this.CVInformationService.getWorkInformation().subscribe(
+      (CVInformation) => {
+        const localData = JSON.parse(JSON.stringify(CVInformation));
+        for (let i = 0; i < localData.length; i++) {
+          localData[i].roleResponsibilities =
+            localData[i].roleResponsibilities.split(',');
+        }
+        this.CVInformation$ = of(localData);
+      },
+      (error) => {
+        this.error = error;
+      }
+    );
   }
 }
