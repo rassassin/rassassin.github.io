@@ -20,7 +20,7 @@ export class CvpageComponent {
       (CVInformation) => {
         const localData = JSON.parse(JSON.stringify(CVInformation));
         for (let i = 0; i < localData.length; i++) {
-          localData[i].roleDetails = localData[i].roleDetails.split(',');
+          localData[i].roleDetails = localData[i].roleDetails.split('#');
         }
         console.log(localData);
         this.CVInformation$ = of(localData);

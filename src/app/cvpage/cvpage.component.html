@@ -24,24 +24,14 @@
                     <div *ngFor="let information of CVInformation$ | async; let i = index;">
                         <div class="experienceHeaderAndYear">
                             <h1 class="experienceHeader">
-                                MHR
+                                {{ information?.workPlace }}
                             </h1>
                             <p class="startAndFinishYear">
-                                2022 - 2023
+                                {{ information?.jobStartDate }}
                             </p>
                         </div>
-                        <div>
-                            <ul>
-                                <li>Lead a team of engineers to deliver new features and improvements to mobile
-                                    applications
-                                </li>
-                                <li>Conducted 1-1 meetings with team members to ensure personal and professional
-                                    development
-                                </li>
-                                <li>Architected and developed a new mobile application using React-Native, Typescript,
-                                    Jest,
-                                    and Detox</li>
-                            </ul>
+                        <div *ngFor="let detail of information?.roleDetails">
+                            <ul> {{ detail }}</ul>
                         </div>
                     </div>
                 </div>
