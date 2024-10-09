@@ -16,13 +16,13 @@ export class CvpageComponent {
   constructor(private CVInformationService: CVInformationService) {}
 
   ngOnInit() {
-    this.CVInformationService.getWorkInformation().subscribe(
+    this.CVInformationService.getCVInformation().subscribe(
       (CVInformation) => {
         const localData = JSON.parse(JSON.stringify(CVInformation));
         for (let i = 0; i < localData.length; i++) {
-          localData[i].roleResponsibilities =
-            localData[i].roleResponsibilities.split(',');
+          localData[i].roleDetails = localData[i].roleDetails.split(',');
         }
+        console.log(localData);
         this.CVInformation$ = of(localData);
       },
       (error) => {

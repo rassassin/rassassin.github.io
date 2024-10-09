@@ -28,7 +28,7 @@ const GET_WORKINFORMATION = gql`
 
 const GET_CVINFORMATION = gql`
   query GetPosts {
-    CVInformation(orderBy: jobStartDate_DESC) {
+    cvDetails(orderBy: jobStartDate_DESC) {
       jobTitle
       jobStartDate
       jobEndDate
