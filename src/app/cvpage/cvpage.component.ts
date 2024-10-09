@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-cvpage',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './cvpage.component.html',
   styleUrl: './cvpage.component.css',
 })

@@ -1,7 +1,7 @@
-import { gql } from "apollo-angular";
+import { gql } from 'apollo-angular';
 
 const GET_PROJECTS = gql`
-query GetPosts {
+  query GetPosts {
     projects {
       description
       title
@@ -10,10 +10,11 @@ query GetPosts {
       imageId
       longDescription
     }
-}`
+  }
+`;
 
 const GET_WORKINFORMATION = gql`
-query GetPosts {
+  query GetPosts {
     workcards(orderBy: startDate_DESC) {
       workCardTitle
       workDescription
@@ -22,7 +23,21 @@ query GetPosts {
       startDate
       endDate
     }
-}`
+  }
+`;
+
+const GET_CVINFORMATION = gql`
+  query GetPosts {
+    CVInformation(orderBy: jobStartDate_DESC) {
+      jobTitle
+      jobStartDate
+      jobEndDate
+      roleDetails
+      workPlace
+    }
+  }
+`;
 
 export { GET_PROJECTS };
 export { GET_WORKINFORMATION };
+export { GET_CVINFORMATION };
