@@ -3,7 +3,13 @@
 @tailwind components;
 @tailwind utilities;
 
-li {
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+/* Remove bullet points only in navigation */
+.navbar-start li {
   list-style-type: none;
 }
 

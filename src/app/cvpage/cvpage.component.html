@@ -26,13 +26,15 @@
                             <h1 class="experienceHeader">
                                 {{ information?.workPlace }}
                             </h1>
-                            <p class="startAndFinishYear">
-                                {{ information?.jobStartDate }}
-                            </p>
+                            <div class="startAndFinishYearContainer">
+                                <p class="startAndFinishYear">
+                                    {{ information?.jobStartDate }} - {{ information?.jobEndDate }}
+                                </p>
+                            </div>
                         </div>
-                        <div *ngFor="let detail of information?.roleDetails">
-                            <ul> {{ detail }}</ul>
-                        </div>
+                        <ul>
+                            <li *ngFor="let detail of information?.roleDetails">{{ detail }}</li>
+                        </ul>
                     </div>
                 </div>
             </div>

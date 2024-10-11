@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { CVInformationService } from '../cvinformation.service';
+import { getDateFormat } from '../../utilities';
 
 @Component({
   selector: 'app-cvpage',
@@ -19,10 +20,17 @@ export class CvpageComponent {
     this.CVInformationService.getCVInformation().subscribe(
       (CVInformation) => {
         const localData = JSON.parse(JSON.stringify(CVInformation));
+        console.log(localData);
         for (let i = 0; i < localData.length; i++) {
           localData[i].roleDetails = localData[i].roleDetails.split('#');
+          localData[i].jobStartDate = getDateFormat(localData[i].jobStartDate);
+          // Set the curerent role's end date to be "Present"
+          if (localData[i] === localData[0]) {
+            localData[i].jobEndDate = 'Present';
+          } else {
+            localData[i].jobEndDate = getDateFormat(localData[i].jobEndDate);
+          }
         }
-        console.log(localData);
         this.CVInformation$ = of(localData);
       },
       (error) => {
