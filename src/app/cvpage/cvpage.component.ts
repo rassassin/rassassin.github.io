@@ -52,7 +52,6 @@ export class CvpageComponent {
 
     this.projectService.getProjects().subscribe(
       (projects) => {
-        console.log(projects);
         for (const project of projects) {
           if (
             project.title === 'Weather App' ||

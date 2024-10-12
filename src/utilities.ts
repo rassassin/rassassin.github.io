@@ -35,6 +35,5 @@ export function calculateYearsExperience(dateStartedWork: string) {
   if (dateStarted.getMonth() < currentDate.getMonth()) {
     yearsOfExperience--;
   }
-  console.log(yearsOfExperience);
   return yearsOfExperience;
 }
