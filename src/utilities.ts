@@ -24,3 +24,17 @@ export function getDateFormat(date: string) {
   const yearString = dateArr[0];
   return `${monthString} ${yearString}`;
 }
+
+export function calculateYearsExperience(dateStartedWork: string) {
+  const [year, month, day] = dateStartedWork.split('-').map(Number);
+  const dateStarted = new Date(year, month - 1, day);
+  const currentDate = new Date();
+
+  let yearsOfExperience = currentDate.getFullYear() - dateStarted.getFullYear();
+
+  if (dateStarted.getMonth() < currentDate.getMonth()) {
+    yearsOfExperience--;
+  }
+  console.log(yearsOfExperience);
+  return yearsOfExperience;
+}

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { CVInformationService } from '../cvinformation.service';
-import { getDateFormat } from '../../utilities';
+import { calculateYearsExperience, getDateFormat } from '../../utilities';
 import { ProjectService } from '../projects.service';
 
 @Component({
@@ -15,6 +15,7 @@ import { ProjectService } from '../projects.service';
 export class CvpageComponent {
   CVInformation$: Observable<Array<any>> = of([]);
   projectURLs: object = {};
+  yearsOfExperience: number;
   error: any;
   constructor(
     private CVInformationService: CVInformationService,
@@ -25,6 +26,9 @@ export class CvpageComponent {
     this.CVInformationService.getCVInformation().subscribe(
       (CVInformation) => {
         const localCVData = JSON.parse(JSON.stringify(CVInformation));
+        this.yearsOfExperience = calculateYearsExperience(
+          localCVData[localCVData.length - 1].jobStartDate
+        );
         for (let i = 0; i < localCVData.length; i++) {
           localCVData[i].roleDetails = localCVData[i].roleDetails.split('#');
           localCVData[i].jobStartDate = getDateFormat(
