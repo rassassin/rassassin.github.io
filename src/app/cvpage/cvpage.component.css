@@ -32,7 +32,6 @@
 }
 
 .personalPhoto {
-  background-image: url("/assets/CVPhoto.jpg");
   background-size: cover;
   height: 250px;
   width: 250px;
