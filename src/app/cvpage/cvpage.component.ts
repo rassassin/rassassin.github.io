@@ -3,6 +3,7 @@ import { Observable, of } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { CVInformationService } from '../cvinformation.service';
 import { getDateFormat } from '../../utilities';
+import { ProjectService } from '../projects.service';
 
 @Component({
   selector: 'app-cvpage',
@@ -13,25 +14,49 @@ import { getDateFormat } from '../../utilities';
 })
 export class CvpageComponent {
   CVInformation$: Observable<Array<any>> = of([]);
+  projectURLs: object = {};
   error: any;
-  constructor(private CVInformationService: CVInformationService) {}
+  constructor(
+    private CVInformationService: CVInformationService,
+    private projectService: ProjectService
+  ) {}
 
   ngOnInit() {
     this.CVInformationService.getCVInformation().subscribe(
       (CVInformation) => {
-        const localData = JSON.parse(JSON.stringify(CVInformation));
-        console.log(localData);
-        for (let i = 0; i < localData.length; i++) {
-          localData[i].roleDetails = localData[i].roleDetails.split('#');
-          localData[i].jobStartDate = getDateFormat(localData[i].jobStartDate);
+        const localCVData = JSON.parse(JSON.stringify(CVInformation));
+        for (let i = 0; i < localCVData.length; i++) {
+          localCVData[i].roleDetails = localCVData[i].roleDetails.split('#');
+          localCVData[i].jobStartDate = getDateFormat(
+            localCVData[i].jobStartDate
+          );
           // Set the curerent role's end date to be "Present"
-          if (localData[i] === localData[0]) {
-            localData[i].jobEndDate = 'Present';
+          if (localCVData[i] === localCVData[0]) {
+            localCVData[i].jobEndDate = 'Present';
           } else {
-            localData[i].jobEndDate = getDateFormat(localData[i].jobEndDate);
+            localCVData[i].jobEndDate = getDateFormat(
+              localCVData[i].jobEndDate
+            );
           }
         }
-        this.CVInformation$ = of(localData);
+        this.CVInformation$ = of(localCVData);
+      },
+      (error) => {
+        this.error = error;
+      }
+    );
+
+    this.projectService.getProjects().subscribe(
+      (projects) => {
+        console.log(projects);
+        for (const project of projects) {
+          if (
+            project.title === 'Weather App' ||
+            project.title === 'Immune system simulation'
+          ) {
+            this.projectURLs[project.title] = project.url;
+          }
+        }
       },
       (error) => {
         this.error = error;
