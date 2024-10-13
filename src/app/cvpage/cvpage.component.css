@@ -38,11 +38,15 @@ p {
 }
 
 .personalPhotoContainer {
+  opacity: 0;
+  scale: 0.8;
   flex: 1;
   display: flex;
   justify-content: center;
   margin-left: 20px;
-  animation: 0.7s ease-out scaleInFromBottom;
+  animation: 0.3s ease-out scaleInFromBottom;
+  animation-fill-mode: forwards;
+  animation-delay: 0.2s;
 }
 
 .personalPhoto {
@@ -185,7 +189,7 @@ hr {
 @keyframes scaleInFromBottom {
   from {
     opacity: 0.1;
-    transform: translateY(0px) scale(0.5);
+    transform: translateY(0px) scale(0.8);
   }
   to {
     opacity: 1;
