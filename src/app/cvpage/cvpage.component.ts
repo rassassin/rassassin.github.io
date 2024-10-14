@@ -2,7 +2,11 @@ import { Component } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { CVInformationService } from '../cvinformation.service';
-import { calculateYearsExperience, getDateFormat } from '../../utilities';
+import {
+  calculateYearsExperience,
+  getDateFormat,
+  getRandomFloat,
+} from '../../utilities';
 import { ProjectService } from '../projects.service';
 
 @Component({
@@ -16,6 +20,7 @@ export class CvpageComponent {
   CVInformation$: Observable<Array<any>> = of([]);
   projectURLs: object = {};
   yearsOfExperience: number;
+  randomFloat: number;
   error: any;
   constructor(
     private CVInformationService: CVInformationService,
@@ -65,5 +70,10 @@ export class CvpageComponent {
         this.error = error;
       }
     );
+  }
+
+  getAnimationDelay() {
+    this.randomFloat = getRandomFloat();
+    return this.randomFloat;
   }
 }

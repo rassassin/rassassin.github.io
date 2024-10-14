@@ -144,6 +144,20 @@ li::marker {
   margin-left: 20px;
 }
 
+.contactMethodContainer {
+  display: flex;
+  margin-top: 10px;
+}
+
+.contactIcon,
+.contactMethod {
+  color: black;
+}
+
+.contactMethod {
+  padding-left: 10px;
+}
+
 .sideBarDescription {
   color: rgb(14, 23, 43);
   margin-top: 10px;
