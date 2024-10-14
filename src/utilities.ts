@@ -32,7 +32,7 @@ export function calculateYearsExperience(dateStartedWork: string) {
 
   let yearsOfExperience = currentDate.getFullYear() - dateStarted.getFullYear();
 
-  if (dateStarted.getMonth() < currentDate.getMonth()) {
+  if (currentDate.getMonth() < dateStarted.getMonth()) {
     yearsOfExperience--;
   }
   return yearsOfExperience;
