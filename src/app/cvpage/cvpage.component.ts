@@ -2,11 +2,7 @@ import { Component } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { CVInformationService } from '../cvinformation.service';
-import {
-  calculateYearsExperience,
-  getDateFormat,
-  getRandomFloat,
-} from '../../utilities';
+import { calculateYearsExperience, getDateFormat } from '../../utilities';
 import { ProjectService } from '../projects.service';
 
 @Component({
@@ -72,8 +68,7 @@ export class CvpageComponent {
     );
   }
 
-  getAnimationDelay() {
-    this.randomFloat = getRandomFloat();
-    return this.randomFloat;
+  openPDF() {
+    window.print();
   }
 }
