@@ -9,7 +9,6 @@ module.exports = {
   daisyui: {
     themes: ["dark"], // Enforcing the dark theme
     styled: true,
-    themes: true,
     base: true,
     utils: true,
     logs: true,
