@@ -16,6 +16,7 @@ p {
   flex-direction: column;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .cvContainer {
@@ -202,17 +203,6 @@ hr {
   justify-content: right;
 }
 
-@keyframes scaleInFromTop {
-  from {
-    opacity: 0;
-    transform: translateY(-30px) scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
 @keyframes scaleInFromBottom {
   from {
     opacity: 0.1;
@@ -236,5 +226,38 @@ hr {
 @media print {
   .pdfIcon {
     display: none;
+  }
+}
+
+/* For screens smaller than 1024px (tablets, smaller laptops) */
+@media (max-width: 1024px) {
+  .cvContainer,
+  .profile,
+  .personalDetailsAndExperienceContainer {
+    max-width: 90%;
+    padding: 0 20px;
+  }
+
+  .pdfIconContainer {
+    width: 90%;
+    padding: 20px 20px 0 0;
+  }
+
+  .profile {
+    flex-direction: column;
+  }
+
+  .personalPhotoContainer {
+    order: -1;
+    margin-left: 0;
+  }
+
+  .personalDetailsAndExperienceContainer {
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  .personalDetailsColumn {
+    margin-left: 0;
   }
 }
