@@ -25,9 +25,10 @@ body {
 .mdc-dialog__surface {
   background-color: #1d232a !important;
 }
-/* 
-@media (prefers-color-scheme: dark) {
-  body {
-    color-scheme: dark !important;
+
+@media print {
+  .navbar,
+  .pdfIcon {
+    display: none;
   }
-} */
+}

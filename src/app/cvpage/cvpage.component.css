@@ -223,12 +223,6 @@ hr {
   }
 }
 
-@media print {
-  .pdfIcon {
-    display: none;
-  }
-}
-
 /* For screens smaller than 1024px (tablets, smaller laptops) */
 @media (max-width: 1024px) {
   .cvContainer,
