@@ -223,6 +223,16 @@ hr {
   }
 }
 
+@media print {
+  .pagebreak {
+    clear: both;
+    page-break-after: always;
+  }
+  @page {
+    margin: 0; /* Remove default page margins */
+  }
+}
+
 /* For screens smaller than 1024px (tablets, smaller laptops) */
 @media (max-width: 1024px) {
   .cvContainer,
@@ -244,6 +254,13 @@ hr {
   .personalPhotoContainer {
     order: -1;
     margin-left: 0;
+  }
+
+  .sideBarHeaders,
+  .nameHeader,
+  .relevantExperienceHeader {
+    justify-content: center;
+    display: flex;
   }
 
   .personalDetailsAndExperienceContainer {

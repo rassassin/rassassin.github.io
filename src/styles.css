@@ -27,6 +27,7 @@ body {
 }
 
 @media print {
+  .pdfIconContainer,
   .navbar,
   .pdfIcon {
     display: none;
