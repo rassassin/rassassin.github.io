@@ -145,6 +145,7 @@ p {
 
 ul {
   color: rgb(14, 23, 43);
+  padding-left: 20px;
 }
 
 li::marker {
