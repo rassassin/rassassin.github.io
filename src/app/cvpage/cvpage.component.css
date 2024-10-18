@@ -228,9 +228,6 @@ hr {
     clear: both;
     page-break-after: always;
   }
-  @page {
-    margin: 0; /* Remove default page margins */
-  }
 }
 
 /* For screens smaller than 1024px (tablets, smaller laptops) */
