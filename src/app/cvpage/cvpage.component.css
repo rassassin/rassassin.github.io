@@ -228,6 +228,9 @@ hr {
     clear: both;
     page-break-after: always;
   }
+  .main {
+    top: -100px;
+  }
 }
 
 /* For screens smaller than 1024px (tablets, smaller laptops) */
