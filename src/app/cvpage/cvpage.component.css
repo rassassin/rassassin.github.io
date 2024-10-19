@@ -227,7 +227,8 @@ hr {
 @media print {
   .pagebreak {
     clear: both;
-    break-after: always;
+    page-break-before: avoid;
+    page-break-after: always;
   }
   .main {
     top: -100px;
@@ -255,6 +256,10 @@ hr {
   .personalPhotoContainer {
     order: -1;
     margin-left: 0;
+  }
+
+  .personalDetailsColumn {
+    order: -1;
   }
 
   .sideBarHeaders,
