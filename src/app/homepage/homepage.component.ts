@@ -42,7 +42,7 @@ export class HomepageComponent {
   }
 
   initializeBalls(): void {
-    for (let i = 0; i <= 25; i++) {
+    for (let i = 0; i <= 35; i++) {
       this.balls.push(new Ball(this.canvas, this.view, this.ballSize));
     }
   }
@@ -106,14 +106,14 @@ class Ball {
     this.height = ballSize;
 
     this.x = Math.random() * this.canvas.width;
-    this.y = Math.random() * this.canvas.height - 86;
-    this.dx = Math.random() * this.dmax - 2;
-    this.dy = Math.random() * this.dmax - 2;
+    this.y = Math.random() * this.canvas.height;
+    this.dx = Math.random() * this.dmax - 1.5;
+    this.dy = Math.random() * this.dmax - 1.5;
   }
 
   update(): void {
     if (this.x < 0 || this.x > this.canvas.width) this.dx = -this.dx;
-    if (this.y < 0 || this.y > this.canvas.height - 86) this.dy = -this.dy;
+    if (this.y < 0 || this.y > this.canvas.height) this.dy = -this.dy;
 
     this.x += this.dx;
     this.y += this.dy;
