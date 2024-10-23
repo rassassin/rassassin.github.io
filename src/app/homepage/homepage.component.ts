@@ -13,6 +13,7 @@ export class HomepageComponent {
   view: CanvasRenderingContext2D;
   balls: Ball[] = [];
   ballSize = 4;
+  name: string[];
 
   constructor() {}
 

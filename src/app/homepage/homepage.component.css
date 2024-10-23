@@ -1,4 +1,4 @@
-.center {
+.nameContainer {
   position: absolute;
   width: 100px;
   height: 50px;
@@ -6,7 +6,6 @@
   left: 50%;
   margin-left: -50px; /* margin is -0.5 * dimension */
   margin-top: -25px;
-  background-color: black;
 }
 
 canvas {
@@ -18,4 +17,72 @@ canvas {
   height: 94%;
   position: fixed; /* Keeps the background fixed during scroll */
   opacity: 0.6;
+}
+
+.nameAnimation {
+  display: flex;
+  font-size: 4rem;
+  font-family: "Arial", sans-serif;
+}
+
+.letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(-100px);
+  animation: slideDown 0.5s forwards;
+}
+
+.letter:nth-child(1) {
+  animation-delay: 1.2s;
+}
+
+.letter:nth-child(2) {
+  animation-delay: 0.7s;
+}
+
+.letter:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.letter:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.letter:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+.letter:nth-child(6) {
+  animation-delay: 1s;
+}
+
+.letter:nth-child(7) {
+  animation-delay: 1.2s;
+}
+
+.letter:nth-child(8) {
+  animation-delay: 1.4s;
+}
+
+.letter:nth-child(9) {
+  animation-delay: 1s;
+}
+
+.letter:nth-child(10) {
+  animation-delay: 1.2s;
+}
+
+.letter:nth-child(11) {
+  animation-delay: 1.4s;
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
