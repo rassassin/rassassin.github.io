@@ -32,8 +32,4 @@ body {
   .pdfIcon {
     display: none;
   }
-
-  .printSection {
-    display: block;
-  }
 }

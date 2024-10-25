@@ -1,10 +1,12 @@
 import { Component, HostListener } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { getRandomFloat } from '../../utilities';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, CommonModule],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.css',
 })
@@ -13,12 +15,34 @@ export class HomepageComponent {
   view: CanvasRenderingContext2D;
   balls: Ball[] = [];
   ballSize = 4;
-  name: string[];
+  animationDelay = [];
+  lettersOfName = [];
 
   constructor() {}
 
+  keepOriginalOrder = () => 0;
+
   ngOnInit(): void {
     console.log('Starting. . .');
+
+    this.lettersOfName = [
+      'R',
+      'e',
+      'e',
+      'c',
+      'e',
+      ' ',
+      'T',
+      'h',
+      'a',
+      'n',
+      'd',
+      'i',
+    ];
+    let counter = 0.3;
+    for (let i = 0; i < this.lettersOfName.length; i++) {
+      this.animationDelay.push((counter += 0.1));
+    }
   }
 
   ngAfterViewInit(): void {
