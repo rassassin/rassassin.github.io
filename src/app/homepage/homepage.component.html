@@ -1,11 +1,27 @@
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <body>
-    <canvas></canvas>
-    <div class="nameContainer">
+  <canvas></canvas>
+  <div>
+    <div class="nameAndDescriptionContainer">
+      <div class="name">
         @for (letter of lettersOfName; track i; let i = $index;) {
-        <span class="letter char whitespace-pre inline-block md:text-8xl text-6xl font-bold -translate-y-full"
-            [ngStyle]="{'animation-delay': animationDelay[i] + 's'}">{{letter}}</span>
+        <span
+          class="letter char whitespace-pre inline-block md:text-8xl text-6xl font-bold -translate-y-full"
+          [ngStyle]="{ 'animation-delay': animationDelay[i] + 's' }"
+          >{{ letter }}</span
+        >
         }
+      </div>
+      <div class="description">
+        <span
+          >Nottingham-based software engineer driven to bring ideas to life
+          through efficient, user-focused solutions. My portfolio highlights a
+          passion for innovation and a commitment to coding excellence,
+          showcasing projects built with a fresh perspective and
+          dedication.</span
+        >
+      </div>
     </div>
+  </div>
 </body>
