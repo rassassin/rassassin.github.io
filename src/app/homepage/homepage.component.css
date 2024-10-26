@@ -4,7 +4,7 @@ canvas {
   background-position: center; 
   background-repeat: no-repeat; 
   width: 100%;
-  height: 94%;
+  height: 90%;
   position: fixed; /* Keeps the background fixed during scroll */
   opacity: 0.6;
   animation: 6s ease-in-out 0s normal forwards 1 fadeInAnimation;;
@@ -17,6 +17,7 @@ canvas {
   align-items: center;
   height: 90vh;
   overflow: hidden;
+  padding-bottom: 20px;
 }
 
 .description {
