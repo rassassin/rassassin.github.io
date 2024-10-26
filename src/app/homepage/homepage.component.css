@@ -7,13 +7,14 @@ canvas {
   height: 94%;
   position: fixed; /* Keeps the background fixed during scroll */
   opacity: 0.6;
+  animation: 5s ease-in-out 0s normal forwards 1 fadeInAnimation;;
 }
 
 .nameContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 93vh;
+  height: 90vh;
   overflow: hidden;
 }
 
@@ -31,6 +32,16 @@ canvas {
   }
   100% {
     transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
     opacity: 1;
   }
 }
