@@ -12,7 +12,7 @@
     auto-fit,
     minmax(500px, 1fr)
   ); /* Allows wrapping to a new row if there are too many cards */
-  gap: 18px; /* Optional: Adds some space between cards */
+  gap: 18px; 
   margin: 18px;
 }
 
