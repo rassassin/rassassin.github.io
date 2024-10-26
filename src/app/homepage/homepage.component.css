@@ -7,7 +7,7 @@ canvas {
   height: 94%;
   position: fixed; /* Keeps the background fixed during scroll */
   opacity: 0.6;
-  animation: 5s ease-in-out 0s normal forwards 1 fadeInAnimation;;
+  animation: 6s ease-in-out 0s normal forwards 1 fadeInAnimation;;
 }
 
 .nameContainer {
