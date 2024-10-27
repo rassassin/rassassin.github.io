@@ -65,13 +65,9 @@ img {
   flex-direction: column;
 }
 
-/* Media Queries for Responsive Design */
-
-/* Medium screens (Tablets) */
-
 /* Small screens (Mobile) */
-@media (max-width: 500px) {
-  .card {
-    width: 100%;
+@media (max-width: 480px) {
+  .projectContainer {
+    grid-template-columns: 1fr;
   }
 }
