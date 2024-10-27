@@ -12,7 +12,7 @@
     auto-fit,
     minmax(500px, 1fr)
   ); /* Allows wrapping to a new row if there are too many cards */
-  gap: 18px; 
+  gap: 18px;
   margin: 18px;
 }
 
@@ -68,47 +68,10 @@ img {
 /* Media Queries for Responsive Design */
 
 /* Medium screens (Tablets) */
-@media (max-width: 1024px) {
-  .card {
-    flex: 1 1 calc(50% - 20px); /* 2 cards per row */
-    max-width: 500px; /* Adjust the max-width for smaller screens */
-  }
-
-  .imageWrapper {
-    width: 600px;
-    height: 300px; /* Adjust the height proportionally */
-  }
-}
 
 /* Small screens (Mobile) */
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   .card {
-    flex: 1 1 100%; /* 1 card per row */
-    max-width: 100%; /* Full width for mobile */
-  }
-
-  .imageWrapper {
     width: 100%;
-    height: auto; /* Let the height adjust automatically */
-  }
-
-  .card-body {
-    height: auto; /* Let the content dictate the height */
-    padding: 16px; /* Adjust padding for smaller screens */
-  }
-
-  .projectContainer {
-    gap: 10px; /* Reduce gap for smaller screens */
-  }
-}
-
-/* Extra small screens (very small mobile devices) */
-@media (max-width: 480px) {
-  .imageWrapper {
-    height: auto; /* Let the image resize based on its aspect ratio */
-  }
-
-  .card-body {
-    padding: 12px; /* Further reduce padding for very small screens */
   }
 }
