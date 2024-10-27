@@ -41,7 +41,7 @@ export class HomepageComponent {
     ];
     let counter = 0.3;
     for (let i = 0; i < this.lettersOfName.length; i++) {
-      if(this.lettersOfName[i].trim() === "") this.animationDelay.push(0)
+      if (this.lettersOfName[i].trim() === '') this.animationDelay.push(0);
       this.animationDelay.push((counter += 0.1));
     }
   }
