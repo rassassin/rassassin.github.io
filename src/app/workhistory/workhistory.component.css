@@ -42,6 +42,7 @@ svg {
 .technologyUsed {
   padding-top: 15px;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
 }
 
@@ -69,7 +70,7 @@ svg {
     justify-content: flex-start;
   }
   .flexEnd {
-    justify-content: flex-start;
+    justify-content: flex;
   }
 }
 
