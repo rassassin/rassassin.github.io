@@ -83,6 +83,14 @@ hr {
 
 /* tablet breakpoint */
 @media (max-width: 768px) {
+  .aboutContent {
+    flex-direction: column;
+  }
+
+  .aboutImageContainer {
+    order: -1;
+  }
+
   .main {
     flex-direction: column;
     text-align: center;
