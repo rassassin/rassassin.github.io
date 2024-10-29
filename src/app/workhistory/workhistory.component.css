@@ -74,6 +74,14 @@ svg {
   }
 }
 
+@media (max-width: 480px) {
+  .workHistoryHeader {
+    font-size: 2.5rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
 @keyframes slideInFromLeft {
   from {
     transform: translateX(-50%); /* Start from outside the screen */

@@ -279,3 +279,24 @@ hr {
     margin-left: 0;
   }
 }
+
+@media (max-width: 480px) {
+  .nameHeader {
+    font-size: 2rem;
+  }
+  .relevantExperienceHeader {
+    font-size: 1.5rem;
+  }
+  .sideBarHeaders {
+    font-size: 1.25rem;
+  }
+  .experienceHeader {
+    font-size: 1rem;
+  }
+  .startAndFinishYear {
+    font-size: 0.8rem;
+  }
+  .name {
+    flex: 1;
+  }
+}
