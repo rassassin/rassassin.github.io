@@ -45,6 +45,14 @@ svg {
   flex-direction: row;
 }
 
+.flexStart {
+  justify-content: flex-start;
+}
+
+.flexEnd {
+  justify-content: flex-end;
+}
+
 .leftPadding {
   padding-left: 10px;
 }
@@ -56,6 +64,12 @@ svg {
 @media (max-width: 768px) {
   .sideFromLeft {
     animation: 0.7s ease-in-out 0s normal forwards 1 slideInFromRight;
+  }
+  .technologyUsed {
+    justify-content: flex-start;
+  }
+  .flexEnd {
+    justify-content: flex-start;
   }
 }
 

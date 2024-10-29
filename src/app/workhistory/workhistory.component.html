@@ -22,11 +22,11 @@
                                     {{information?.workDescription}}
                                 </div>
                             </div>
-                            <div class="technologyUsed"
-                                [ngStyle]="{'justify-content': (i % 2) ? 'flex-start' : 'flex-end'}">
+                            <div class="technologyUsed" [ngClass]="(i % 2) ? 'flexStart' : 'flexEnd'">
                                 <div *ngFor="let technology of information?.technologyUsed">
                                     <div [ngClass]="(i % 2) ? 'rightPadding' : 'leftPadding'">
-                                        <div class="technologyBadge badge badge-outline">{{ technology }}</div>
+                                        <div class="technologyBadge badge badge-outline"
+                                            [ngClass]="(i % 2) ? 'rightPadding' : 'leftPadding'">{{ technology }}</div>
                                     </div>
                                 </div>
                             </div>
