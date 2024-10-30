@@ -80,7 +80,7 @@ p {
   animation: 0.3s ease-out scaleInFromTop;
 }
 
-.jobTitle {
+.devDescription {
   color: rgb(14, 23, 43);
 }
 
@@ -298,5 +298,11 @@ hr {
   }
   .name {
     flex: 1;
+  }
+  .devDescription {
+    text-align: center;
+  }
+  .interestList {
+    text-align: center;
   }
 }
