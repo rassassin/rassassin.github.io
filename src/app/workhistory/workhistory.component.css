@@ -64,7 +64,7 @@ svg {
 
 @media (max-width: 768px) {
   .sideFromLeft {
-    animation: 0.7s ease-in-out 0s normal forwards 1 slideInFromRight !important;
+    animation: 0.7s ease-in-out 0s normal forwards 1 slideInFromRight;
   }
   .technologyUsed {
     justify-content: flex-start;
