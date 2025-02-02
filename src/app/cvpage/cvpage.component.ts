@@ -31,7 +31,7 @@ export class CvpageComponent {
           localCVData[localCVData.length - 1].jobStartDate
         );
         for (let i = 0; i < localCVData.length; i++) {
-          localCVData[i].roleDetails = localCVData[i].roleDetails.split('#');
+          localCVData[i].roleDetails = localCVData[i].roleDetails.split('^');
           localCVData[i].jobStartDate = getDateFormat(
             localCVData[i].jobStartDate
           );
